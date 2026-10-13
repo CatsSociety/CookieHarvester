@@ -56,7 +56,8 @@ def Requests_NOT(fallo, temp_dir, script_path):
             print("[!] Instala manualmente con: pip install --user requests")
             print("[!] O con: sudo pip install requests (si tienes permisos)")
             return True
-
+        
+        # 1. Eliminar el directorio temporal
         if temp_dir and os.path.exists(temp_dir):
             shutil.rmtree(temp_dir, ignore_errors=True)
             print(f"[+] Eliminado: {temp_dir}")

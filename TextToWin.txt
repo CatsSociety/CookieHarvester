@@ -45,5 +45,3 @@
 [+] Limpieza completada (sin autodestrucción).
 ============================================================
 PS C:\Users\win\Documents\Codes>
-
-A small session cookie slab, takes with it the entire Firefox browser profile folder and sends it in small zip-format compressed files to the attacker via Discord, has been tested in the Fedora 44 KDE environment and works perfectly, discretion is recommended and the code is observed.

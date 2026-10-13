@@ -40,6 +40,8 @@ CookieHarvester copia los perfiles de navegadores con sesiones activas a `/tmp`,
 
 Requiere **Python 3.10+** y la librería `requests`. Si no está disponible, el script se elimina solo. Puede empaquetarse con PyInstaller para evitar dependencias.
 
+Descarguen la rama Beta para desarrollo propio.
+
 ---
 
 ## Características
