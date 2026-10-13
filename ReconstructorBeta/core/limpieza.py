@@ -30,9 +30,9 @@ def limpiar_origen_selectiva(paquete_base, archivos_a_eliminar):
                 eliminados += 1
                 print(f"       Eliminado: {archivo}")
             except Exception as e:
-                print(f"       [!] Error al eliminar {archivo}: {e}")
+                print(f"[!!] Error al eliminar {archivo}: {e}")
 
     if eliminados > 0:
-        print(f"    ✅ Eliminados {eliminados} archivos del paquete '{paquete_base}' de la carpeta de origen.")
+        print(f"[OK] Eliminados {eliminados} archivos del paquete '{paquete_base}' de la carpeta de origen.")
     else:
-        print(f"    ℹ️  No se encontraron archivos del paquete '{paquete_base}' para eliminar.")
+        print(f"[!!] No se encontraron archivos del paquete '{paquete_base}' para eliminar.")

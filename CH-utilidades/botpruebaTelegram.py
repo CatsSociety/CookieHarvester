@@ -7,7 +7,8 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 import requests
 
-
+# PRUEBA TU BOT DE TELEGRAM AQUI
+# NO OLVIDES PONER TUS CREDENCIALES EN .env
 
 session = requests.Session()
 

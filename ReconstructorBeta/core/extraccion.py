@@ -17,5 +17,5 @@ def descomprimir_zip(zip_path, destino):
             zf.extractall(destino)
         return True
     except Exception as e:
-        print(f"    [!] Error al descomprimir {os.path.basename(zip_path)}: {e}")
+        print(f"[!!] Error al descomprimir {os.path.basename(zip_path)}: {e}")
         return False
