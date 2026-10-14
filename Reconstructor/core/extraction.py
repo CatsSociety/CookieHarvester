@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-core/extraccion.py
+core/extraction.py
 - Descomprime un ZIP en una carpeta destino.
 """
 

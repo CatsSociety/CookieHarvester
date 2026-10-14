@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-core/navegadores.py
+core/browsers.py
 - Detecta qué navegadores están abiertos en el sistema.
 - Usa pgrep para verificar procesos activos.
 """

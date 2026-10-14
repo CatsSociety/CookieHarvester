@@ -1,4 +1,4 @@
-# Proyecto
+# Project
 
 ```
  ██████╗ ██████╗  ██████╗ ██╗  ██╗██╗███████╗
@@ -16,7 +16,8 @@
 ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝ beta
 ```
 
-**CookieHarvester Beta** — Extrae perfiles de navegadores (Firefox/Chromium), los comprime en ZIP de 8 MB y los envía a Discord o Telegram. Limpia rastros y se autodestruye (opcional).
+**CookieHarvester Beta** — Extracts browser profiles (Firefox/Chromium), compresses them into 8 MB ZIP
+files, and sends them to Discord or Telegram. Cleans traces and self-destructs (optional).
 
 ![Status](https://img.shields.io/badge/status-beta-yellow)
 ![License](https://img.shields.io/badge/license-MIT-blue)
@@ -25,83 +26,91 @@
 
 ---
 
-## Tabla de Contenidos
-- [Descripción](#descripción)
-- [Estructura](#estructura)
-- [Características](#características)
-- [Requisitos](#requisitos)
-- [Instalación](#instalación)
-- [Configuración](#configuración)
-- [Uso](#uso)
+## Table of Contents
+- [Description](#description)
+- [Structure](#structure)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
 - [Reconstructor](#reconstructor)
-- [Autor](#autor)
+- [Author](#author)
 
 ---
 
-## Descripción
+## Description
 
-CookieHarvester copia los perfiles de navegadores con sesiones activas a `/tmp`, los divide en ZIP de máximo 8 MB y los envía al transporte configurado (Discord o Telegram). Si falla un envío, reintenta hasta 3 veces. Al finalizar, borra todo rastro y puede autodestruirse (`AUTODESTRUIR = True`).
+CookieHarvester copies active browser profiles to `/tmp`, divides them into 8 MB ZIP files, and sends 
+them to the configured transport (Discord or Telegram). If a send fails, it retries up to 3 times.
+Upon completion, it deletes all traces and can self-destruct (`AUTODESTRUIR = True`).
 
-Esta es la rama **Beta**, con arquitectura modular: el core es independiente del transporte, y se puede cambiar de Discord a Telegram solo con una variable en el `.env`.
+This is the **Beta** branch with a modular architecture: the core is independent of the transport 
+layer, and you can switch from Discord to Telegram with just one variable in the `.env`.
 
-Requiere **Python 3.10+** y las librerías `requests` y `python-dotenv`. Si `requests` no está disponible, el script se elimina solo.
+Requires **Python 3.10+** and the libraries `requests` and `python-dotenv`. If `requests` is not 
+available, the script deletes itself.
 
-Descarguen la rama **Beta** para desarrollo propio.
+Download the **Beta** branch for personal development.
 
 ---
 
-## Estructura
-Cookie Harvester tiene la siguiente estructura
+## Structure
+CookieHarvester has the following structure
 
 ```bash
-CookieHarvesterBeta/
-├── .env                   # Crear para credenciales.   
-├── config.py              # Configuración global y carga del .env
-├── main.py                # Orquestación del flujo
-├── core/                  # Lógica de negocio (sin transporte)
+CookieHarvester/
+├── .env      #IMPORTANT   # Create your .env for credentials.   
+├── config.py              # Global configuration and .env loading
+├── main.py                # Orchestration of the flow
+├── core/                  # Business logic (transport independent)
 │ ├── init.py
-│ ├── navegadores.py       # Detección de navegadores abiertos
-│ ├── perfiles.py          # Búsqueda de perfiles Firefox/Chrome/Brave
-│ ├── copia.py             # Copia de carpetas de perfil
-│ ├── info.py              # Generación de info.txt
-│ ├── compresion.py        # ZIP + división en partes
-│ └── limpieza.py          # Autodestrucción segura
-└── transport/             # Capa de envío intercambiable
-├── init.py                # Selector get_transport()
-├── base.py                # Interfaz abstracta Transport
-├── discord.py             # Implementación Discord
-└── telegram.py            # Implementación Telegram
+│ ├── browsers.py          # Detection of open browsers
+│ ├── profiles.py          # Search for Firefox/Chrome/Brave profiles
+│ ├── copy.py              # Copy profile folders
+│ ├── info.py              # Generation of info.txt
+│ ├── compression.py       # ZIP + splitting into parts
+│ └── cleaning.py          # Safe self-destruction
+└── transport/             # Interchangeable delivery layer
+├── init.py                # get_transport() selector
+├── base.py                # Abstract Transport interface
+├── discord.py             # Discord implementation
+└── telegram.py            # Telegram implementation
 ```
 
-> Las versiones monolíticas anteriores están en `CH-utilidades/` como referencia histórica, se utilizan como pruebas para bots o entornos Windows.
+> Previous monolithic versions are in `CH-utilidades/` as historical references, used for 
+> testing bots or Windows environments. Remember language spanish write.
 
 ---
 
-## Características
+## Features
 
-- **Análisis:** Detecta el navegador predeterminado y copia perfiles con sesiones a `/tmp`.
-- **Compresión:** Divide los perfiles en ZIP de 8 MB, nombrados con IP, hostname, navegador, fecha y orden.
-- **Envío:** Envía los paquetes al transporte configurado (Discord o Telegram). Reintenta hasta 3 veces si falla.
-- **Limpieza:** Borra rastros en bash y `/tmp`. Se autodestruye si `AUTODESTRUIR = True`.
+- **Analysis:** Detects the default browser and copies active profiles to `/tmp`.
+- **Compression:** Splits profiles into 8 MB ZIP files named with IP, hostname,
+ browser, date, and order.
+- **Delivery:** Sends packages to the configured transport (Discord or Telegram). 
+ Retries up to 3 times if a send fails.
+- **Cleaning:** Deletes traces in bash and `/tmp`. Self-destructs if 
+ `AUTODESTRUIR = True`.
 
 ---
 
-## Requisitos
+## Requirements
 
 - **Python 3.10+**
-- **Librerías:** `requests`, `python-dotenv`
-- **SO compatible:** Linux (Mint, Fedora 44 KDE)
+- **Libraries:** `requests`, `python-dotenv`
+- **OS Compatible:** Linux (Mint, Fedora 44 KDE)
 
 ---
 
-## Instalación
+## Installation
 
-Instalaremos solo la rama **BETA**
+Install only the **BETA** branch
 ```bash
 git clone -b beta --single-branch https://github.com/CatsSociety/CookieHarvester.git
 ```
 ```bash
-cd CookieHarvester/CookieHarvesterBeta
+cd CookieHarvester/CookieHarvester
 ```
 ```bash
 python3 -m venv venv && source venv/bin/activate
@@ -110,77 +119,80 @@ python3 -m venv venv && source venv/bin/activate
 pip install requests python-dotenv
 ```
 
-En Ubuntu 24.04 / Linux Mint 22 puede que necesites sudo apt install python3.12-venv antes de crear el venv (PEP 668)
+On Ubuntu 24.04 / Linux Mint 22, you may need `sudo apt install python3.12-venv` 
+before creating the venv (PEP 668)
 
 ---
 
-## Configuracion
+## Configuration
 
-Crea un archivo `.env` en la raiz de `CookieHarvesterBeta`
+Create a `.env` file in the root of `CookieHarvester`
 
 ```bash
-# Credenciales
+# Credentials
 
 # Discord
-API_Discord = "tu_clave_aqui"
+API_Discord = "your_key_here"
 
 # Telegram
-TOKEN_TL = "numero de token de bot"
-CHAT_ID = "numero de chat"
+TOKEN_TL = "bot token number"
+CHAT_ID = "chat number"
 
-# Selector de transporte (discord | telegram), descomenta uno.
+# Transport selector (discord | telegram), uncomment one.
 # TRANSPORT = "discord"
 # TRANSPORT = "telegram"
 ```
-Descomenta a cualquiera de los dos segun tu bot.
+Uncomment either of the two according to your bot.
 
 ---
-## Uso
+## Usage
 
-Una vez, todo listo, probaremos la utilidad con:
+Once everything is ready, test the utility with:
 
 ```bash
 cd CookieHarvesterBeta && python3 main.py
 ```
-El script:
-- Verifica requests.
-- Lee el .env.
-- Detecta navegadores abiertos.
-- Busca perfiles de Firefox (y Chrome/Brave si SOPORTE_CHROME = True).
-- Copia, comprime y divide cada perfil.
-- Envía las partes por el transporte configurado.
-- Envía un resumen final.
-- Limpia /tmp y se autodestruye si AUTODESTRUIR = True.
+The script:
+- Verifies requests.
+- Reads the .env.
+- Detects open browsers.
+- Searches for Firefox profiles (and Chrome/Brave if SOPORTE_CHROME = True).
+- Copies, compresses, and splits each profile.
+- Sends parts via the configured transport.
+- Sends a final summary.
+- Cleans /tmp and self-destructs if AUTODESTRUIR = True.
 
 ---
 ## Reconstructor
 
-El reconstructor es offline. Toma los ZIP (completos o en partes) desde `~/Descargas/CookiesZIP/`, los une si hace falta, los descomprime en `~/Descargas/CookiesCompletos/` y limpia solo los archivos del paquete procesado.
+The reconstructor is offline. It takes complete or partial ZIP files from 
+`~/Downloads/CookiesZIP/`, joins them if necessary, extracts them to 
+`~/Downloads/CookiesCompleted/`, and cleans only the processed package files.
 
-Teniendo la siguiente estructura:
+With the following structure:
 
 ```bash
-ReconstructorBeta/
+Reconstructor/
 ├── config.py
 ├── main.py
 └── core/
-    ├── nombres.py
-    ├── verificacion.py
-    ├── ensamblado.py
-    ├── extraccion.py
-    └── limpieza.py
+    ├── names.py
+    ├── verification.py
+    ├── assembly.py
+    ├── extraction.py
+    └── cleaning.py
 ```
-Una vez tenemos los archivos zip en la carpeta solicita.
-Entonces, podemos utilizar a el ReconstructorBeta para armar el zip final:
+Once we have the zip files in the requested folder, you can use Reconstructor 
+to build the final zip:
 
 ```bash
-cd ReconstructorBeta
+cd Reconstructor
 ```
 ```bash
 python3 main.py
 ```
 
-## Autor
+## Author
 - Github: `@Bankai-HackingDev`
 
 ---

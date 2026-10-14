@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-core/limpieza.py
+core/cleaning.py
 - Autodestrucción segura: elimina temporales, ZIPs, historial y script.
 - Solo se ejecuta si AUTODESTRUIR es True.
 - Verifica envíos antes de borrar.

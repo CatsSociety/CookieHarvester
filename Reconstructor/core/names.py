@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-core/nombres.py
+core/names.py
 - Utilidades para parsear nombres de archivos ZIP.
 - Extrae número de parte y nombre base.
 """

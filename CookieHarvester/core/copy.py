@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-core/copia.py
+core/copy.py
 - Copia una carpeta completa a otro destino.
 - Muestra errores si falla la copia.
 """

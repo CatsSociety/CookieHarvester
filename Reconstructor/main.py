@@ -27,11 +27,11 @@ from config import (
 )
 
 # Lógica de negocio.
-from core.nombres import obtener_numero_parte, obtener_nombre_base
-from core.verificacion import es_zip_valido
-from core.ensamblado import unir_partes
-from core.extraccion import descomprimir_zip
-from core.limpieza import limpiar_origen_selectiva
+from core.names import obtener_numero_parte, obtener_nombre_base
+from core.verification import es_zip_valido
+from core.assembly import unir_partes
+from core.extraction import descomprimir_zip
+from core.cleaning import limpiar_origen_selectiva
 
 
 # ============================================================

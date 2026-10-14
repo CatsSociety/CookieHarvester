@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-core/ensamblado.py
+core/assembly.py
 - Une varias partes de un ZIP en un solo archivo.
 """
 

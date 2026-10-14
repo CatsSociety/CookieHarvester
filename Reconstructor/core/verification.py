@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-core/verificacion.py
+core/verification.py
 - Verifica si un archivo es un ZIP válido.
 """
 

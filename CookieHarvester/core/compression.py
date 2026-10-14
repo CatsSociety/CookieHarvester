@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-core/compresion.py
+core/compression.py
 - Comprime una carpeta en ZIP.
 - Divide el ZIP en partes de MAX_SIZE_MB.
 """

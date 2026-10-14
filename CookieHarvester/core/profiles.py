@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-core/perfiles.py
+core/profiles.py
 - Busca las carpetas de perfiles de Firefox, Chrome y Brave.
 - Retorna la ruta del perfil o None si no se encuentra.
 """

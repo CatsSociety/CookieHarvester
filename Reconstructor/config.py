@@ -13,11 +13,18 @@ import os
 #                  CONFIGURACIÓN
 # ============================================================
 
+
+# NO EDITAR PUES
 # --- versiones ---
 VERSION = "v3.5.1" # Version actual
 # VERSION = "v3.5.0" # Version anterior
 
-# Configuraciones
+
+# ============================================================
+
+# EDITARLOS DEPENDIENDO SUS DIRECTORIOS
+
+
 CARPETA_ORIGEN = os.path.expanduser("~/Descargas/CookiesZIP")
 CARPETA_DESTINO = os.path.expanduser("~/Descargas/CookiesCompletos")
 EXTENSION = ".zip"

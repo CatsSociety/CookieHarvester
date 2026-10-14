@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-core/limpieza.py
+core/cleaning.py
 - Elimina SOLO los archivos del paquete procesado de la carpeta de origen.
 - Respeta el resto de archivos que no pertenecen al paquete.
 """
